@@ -47,6 +47,9 @@
     <ProjectReference Include="..\NativeSdkMsi\NativeSdkMsi2017.wixproj" Condition="$(VS2017Available)">
         <Properties>VisualStudioTargetVersion=2017</Properties>
     </ProjectReference>
+    <ProjectReference Include="..\NativeSdkMsi\NativeSdkMsi2019.wixproj" Condition="$(VS2019Available)">
+        <Properties>VisualStudioTargetVersion=2019</Properties>
+    </ProjectReference>
     <ProjectReference Include="..\WixBA\WixBA.csproj" Condition="'$(WixStdBundle)' != 'true'" />
   </ItemGroup>
 

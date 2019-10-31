@@ -39,11 +39,13 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <TargetName>wcautil</TargetName>
     <MultiTargetLibrary>true</MultiTargetLibrary>
+    <PlatformToolset>142</PlatformToolset>
   </PropertyGroup>
 
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), wix.proj))\tools\WixBuild.props" />
 
   <PropertyGroup>
+    <PlatformToolset>142</PlatformToolset>
     <ProjectAdditionalIncludeDirectories>$(WixRoot)src\libs\dutil\inc</ProjectAdditionalIncludeDirectories>
   </PropertyGroup>
 

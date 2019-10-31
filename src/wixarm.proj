@@ -9,6 +9,10 @@
 
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), wix.proj))\tools\Traversal.targets" />
 
+  <PropertyGroup Condition="$(VS2019Available)">
+    <ArmVSVersion Condition=" '$(ArmVSVersion)'=='' ">15.0</ArmVSVersion>
+    <ArmPlatformToolset Condition=" '$(ArmPlatformToolset)'=='' ">v142</ArmPlatformToolset>
+  </PropertyGroup>
   <PropertyGroup Condition="$(VS2017Available)">
     <ArmVSVersion Condition=" '$(ArmVSVersion)'=='' ">15.0</ArmVSVersion>
     <ArmPlatformToolset Condition=" '$(ArmPlatformToolset)'=='' ">v141</ArmPlatformToolset>

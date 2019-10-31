@@ -56,6 +56,12 @@
                 <MsiProperty Name='INSTALLFOLDER' Value='[InstallFolder]' />
             </MsiPackage>
             <?endif?>
+
+            <?ifdef VS2019Available ?>
+            <MsiPackage Name='data\nsdk2019.msi' SourceFile='data\'>
+                <MsiProperty Name='INSTALLFOLDER' Value='[InstallFolder]' />
+            </MsiPackage>
+            <?endif?>
         </PackageGroup>
     </Fragment>
 </Wix>

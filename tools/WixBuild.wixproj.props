@@ -23,6 +23,7 @@
     <DefineConstants Condition="$(VS2013Available)">$(DefineConstants);VS2013Available=true</DefineConstants>
     <DefineConstants Condition="$(VS2015Available)">$(DefineConstants);VS2015Available=true</DefineConstants>
     <DefineConstants Condition="$(VS2017Available)">$(DefineConstants);VS2017Available=true</DefineConstants>
+    <DefineConstants Condition="$(VS2019Available)">$(DefineConstants);VS2019Available=true</DefineConstants>
     <DefineConstants Condition="$(BuildSandcastleDocumentation)">$(DefineConstants);BuildSandcastleDocumentation=$(BuildSandcastleDocumentation)</DefineConstants>
   </PropertyGroup>
 

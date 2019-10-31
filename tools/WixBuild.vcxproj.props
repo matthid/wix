@@ -4,10 +4,11 @@
 
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <PropertyGroup Condition=" $(StaticAnalysisEnabled) and ($(VS2013Available) or $(VS2015Available) or $(VS2017Available)) ">
+  <PropertyGroup Condition=" $(StaticAnalysisEnabled) and ($(VS2013Available) or $(VS2015Available) or $(VS2017Available) or $(VS2019Available)) ">
     <PlatformToolset Condition="$(VS2013Available)">v120</PlatformToolset>
     <PlatformToolset Condition="$(VS2015Available)">v140</PlatformToolset>
-    <PlatformToolset Condition="$(VS2017Available)">v140</PlatformToolset>
+    <PlatformToolset Condition="$(VS2017Available)">v141</PlatformToolset>
+    <PlatformToolset Condition="$(VS2019Available)">v142</PlatformToolset>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
     <!-- turn off deprecation warning -->
@@ -16,6 +17,7 @@
 
   <PropertyGroup>
     <!-- If available and we're not explicitly setting the toolset, use VS2017; otherwise fall back to VS2015, VS2013, VS2012, VS2010, in that order. -->
+    <PlatformToolset Condition=" $(VS2019Available) and ('$(PlatformToolset)'=='' or '$(DefaultToVS)'=='2019') ">v142</PlatformToolset>
     <PlatformToolset Condition=" $(VS2017Available) and ('$(PlatformToolset)'=='' or '$(DefaultToVS)'=='2017') ">v141_xp</PlatformToolset>
     <PlatformToolset Condition=" $(VS2015Available) and ('$(PlatformToolset)'=='' or '$(DefaultToVS)'=='2015') ">v140_xp</PlatformToolset>
     <PlatformToolset Condition=" $(VS2013Available) and ('$(PlatformToolset)'=='' or '$(DefaultToVS)'=='2013') ">v120_xp</PlatformToolset>
@@ -68,6 +70,7 @@
     <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)'=='' ">v4.5</TargetFrameworkVersion>
     <PlatformToolset Condition="$(VS2015Available)">v140</PlatformToolset>
     <PlatformToolset Condition="$(VS2017Available)">v141</PlatformToolset>
+    <PlatformToolset Condition="$(VS2019Available)">v142</PlatformToolset>
   </PropertyGroup>
 
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
